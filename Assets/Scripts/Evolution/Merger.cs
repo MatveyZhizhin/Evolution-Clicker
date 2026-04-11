@@ -1,6 +1,5 @@
 using Evolution.Chains;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Evolution
@@ -21,7 +20,6 @@ namespace Evolution
             Transform t2 = item2.transform;
 
             int level = item1.CurrentLevel;
-            var step = config.GetStep(level);
 
             Vector3 targetPos = (t1.position + t2.position) / 2f;
 

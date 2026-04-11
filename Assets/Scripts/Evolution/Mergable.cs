@@ -1,6 +1,4 @@
 using Evolution.Chains;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Evolution
@@ -17,11 +15,10 @@ namespace Evolution
 
         public bool IsAvailable => !_isMerging;
         public int CurrentLevel => _currentLevel;
-        public EvolutionChain Config => _evolutionChain;
 
         private void Start()
         {
-            _currentLevel = _evolutionChain.GetLevel(gameObject.GetComponent<SpriteRenderer>().sprite);
+            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(_currentLevel);
         }
 
         public void TryMerge()
@@ -35,6 +32,8 @@ namespace Evolution
                 Merger.StartMerge(this, partner, _evolutionChain);
             }
         }
+
+        public void IncreaseLevel() => _currentLevel++;
 
         private Mergable FindPartnerViaPhysics(float radius)
         {
