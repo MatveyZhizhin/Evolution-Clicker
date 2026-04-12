@@ -1,6 +1,7 @@
 using UnityEngine;
+using Evolution;
 
-namespace Evolution
+namespace Movement
 {
     [RequireComponent(typeof(Collider2D))]
     public class Draggable : MonoBehaviour
@@ -10,6 +11,8 @@ namespace Evolution
         private Vector3 _offset;
         private bool _isDragging = false;
         private Mergable _mergable;
+
+        public bool IsDragging => _isDragging;
 
         private void Awake()
         {
