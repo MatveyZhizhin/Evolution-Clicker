@@ -1,12 +1,20 @@
 using Evolution.Chains;
+using Evolution.Spawn;
 using System.Collections;
 using UnityEngine;
 
 namespace Evolution
 {
-    public static class Merger
+    public class Merger : MonoBehaviour
     {
-        public static void StartMerge(Mergable item1, Mergable item2, EvolutionChain config)
+        private Spawner _spawner;
+
+        private void Awake()
+        {
+            _spawner = FindObjectOfType<Spawner>();
+        }
+
+        public void StartMerge(Mergable item1, Mergable item2, EvolutionChain config)
         {
             item1.SetLocked(true);
             item2.SetLocked(true);
@@ -14,7 +22,7 @@ namespace Evolution
             item1.StartCoroutine(MergeRoutine(item1, item2, config));
         }
 
-        private static IEnumerator MergeRoutine(Mergable item1, Mergable item2, EvolutionChain config)
+        private IEnumerator MergeRoutine(Mergable item1, Mergable item2, EvolutionChain config)
         {
             Transform t1 = item1.transform;
             Transform t2 = item2.transform;
@@ -50,25 +58,17 @@ namespace Evolution
 
             SpawnNextLevel(targetPos, level, config);
 
-            Object.Destroy(item1.gameObject);
-            Object.Destroy(item2.gameObject);
+            _spawner.RemoveObject(item1.gameObject);
+            _spawner.RemoveObject(item2.gameObject);
         }
 
-        private static void SpawnNextLevel(Vector3 position, int currentLevel, EvolutionChain config)
+        private void SpawnNextLevel(Vector3 position, int currentLevel, EvolutionChain config)
         {
             int nextLevel = currentLevel + 1;
 
             if (nextLevel <= config.MaxLevel)
             {
-                var nextStep = config.GetStep(nextLevel);
-
-                if (nextStep != null && config.Prefab != null)
-                {
-                    GameObject newObj = Object.Instantiate(config.Prefab, position, Quaternion.identity);
-                    newObj.GetComponent<SpriteRenderer>().sprite = nextStep;
-
-                    Mergable newMergable = newObj.GetComponent<Mergable>();
-                }
+                _spawner.SpawnObject(nextLevel, position);
             }
         }
     }

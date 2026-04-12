@@ -12,13 +12,20 @@ namespace Evolution
         private int _currentLevel = 0;
 
         private bool _isMerging = false;
+        private Merger _merger;
 
         public bool IsAvailable => !_isMerging;
         public int CurrentLevel => _currentLevel;
 
-        private void Start()
+        private void Awake()
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(_currentLevel);
+            _merger = FindObjectOfType<Merger>();
+        }
+
+        public void SetLevel(int level)
+        {
+            _currentLevel = level;
+            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(level);
         }
 
         public void TryMerge()
@@ -29,7 +36,7 @@ namespace Evolution
 
             if (partner != null)
             {
-                Merger.StartMerge(this, partner, _evolutionChain);
+                _merger.StartMerge(this, partner, _evolutionChain);
             }
         }
 
