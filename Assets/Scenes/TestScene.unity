@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startLevel: 0
-  _spawnDelay: 10
+  _spawnDelay: 5
   _maxObjects: 12
   _evolutionChain: {fileID: 11400000, guid: 47211d39fe1281d4794b6ef76b41fe11, type: 2}
 --- !u!114 &1978875580
