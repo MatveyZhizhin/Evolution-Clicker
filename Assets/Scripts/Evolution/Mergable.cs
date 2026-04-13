@@ -25,7 +25,7 @@ namespace Evolution
         public void SetLevel(int level)
         {
             _currentLevel = level;
-            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(level);
+            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(level).Sprite;
         }
 
         public void TryMerge()

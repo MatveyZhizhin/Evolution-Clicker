@@ -17,5 +17,11 @@ MonoBehaviour:
   Prefab: {fileID: 3729308015451941383, guid: aa9fd6de52b15fa4490a74c89ae6858c, type: 3}
   _steps:
   - Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    MoneyPerClick: 1
+    MoneyPerSecond: 1
   - Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    MoneyPerClick: 2
+    MoneyPerSecond: 10
   - Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    MoneyPerClick: 3
+    MoneyPerSecond: 0

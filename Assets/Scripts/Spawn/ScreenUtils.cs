@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Evolution.Spawn
+namespace Spawn
 {
     public static class ScreenUtils
     {       
