@@ -14,14 +14,16 @@ namespace Evolution.Chains
         public class EvolutionStep
         {
             public Sprite Sprite;
+            public int MoneyPerClick;
+            public int MoneyPerSecond;
         }
 
         [SerializeField] private EvolutionStep[] _steps;
 
-        public Sprite GetStep(int level)
+        public EvolutionStep GetStep(int level)
         {
             if (level >= 0 && level < _steps.Length)
-                return _steps[level].Sprite;
+                return _steps[level];
 
             return null;
         }
