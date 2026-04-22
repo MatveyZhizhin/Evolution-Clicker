@@ -1,12 +1,10 @@
 using System;
 
-namespace UI
+namespace UI.Text
 {
     public interface ITextUser
     {
         public event Action<string, string> OnDataChanged;
-
-        public void InitializeTextView(TextView view);
     }
 }
 

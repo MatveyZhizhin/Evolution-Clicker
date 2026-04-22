@@ -33,7 +33,7 @@ namespace Money
 
             if (step != null)
             {
-                _globalBalance.IncreaseBalance(step.MoneyPerClick);
+                _globalBalance.IncreaseBalance(step.MoneyPerClick * _globalBalance.ClickRewardMultiplier);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Money
 
                 if (step != null && step.MoneyPerSecond > 0)
                 {
-                    _globalBalance.IncreaseBalance(step.MoneyPerSecond);
+                    _globalBalance.IncreaseBalance(step.MoneyPerSecond * _globalBalance.PassiveRewardMultiplier);
                 }
             }
         }

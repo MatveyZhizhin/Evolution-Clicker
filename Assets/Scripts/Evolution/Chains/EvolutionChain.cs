@@ -13,6 +13,7 @@ namespace Evolution.Chains
         [System.Serializable]
         public class EvolutionStep
         {
+            public string Name;
             public Sprite Sprite;
             public int MoneyPerClick;
             public int MoneyPerSecond;

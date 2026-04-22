@@ -1,17 +1,18 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace UI.Text
 {
     [RequireComponent(typeof(ITextUser))]
     public class TextView : MonoBehaviour
     {
         [Header("UI References")]
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private string _additionalText;
 
         [Header("Settings")]
         [Tooltip("Ключ данных, которые должен отображать этот текст (например, 'Balance')")]
-        [SerializeField] private string _dataKey = "Balance";
+        [SerializeField] private string _dataKey;
 
         private ITextUser _textUser;
 
@@ -28,8 +29,6 @@ namespace UI
             if (_textUser != null)
             {
                 _textUser.OnDataChanged += HandleDataChanged;
-
-                _textUser.InitializeTextView(this);
             }
         }
 
@@ -58,7 +57,5 @@ namespace UI
         }
 
         public string GetDataKey() => _dataKey;
-
-        public void SetTextDirectly(string text) => DisplayText(text);
     }
 }
