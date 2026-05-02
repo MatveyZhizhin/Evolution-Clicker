@@ -1,10 +1,6 @@
 using Evolution;
 using Spawn;
 using System.Collections;
-<<<<<<< Updated upstream
-=======
-using UI;
->>>>>>> Stashed changes
 using UnityEngine;
 
 namespace Movement
@@ -38,10 +34,6 @@ namespace Movement
             StopWandering();
         }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         public void StartWandering()
         {
             if (_wanderCoroutine != null) StopCoroutine(_wanderCoroutine);
@@ -89,11 +81,7 @@ namespace Movement
 
         private void PickNewTarget()
         {
-<<<<<<< Updated upstream
             _targetPosition = ScreenUtils.GetRandomVisiblePosition(_mainCamera, 0.5f);
-=======
-            _targetPosition = ScreenUtils.GetRandomVisiblePosition(Camera.main, 0.5f);
->>>>>>> Stashed changes
             _targetPosition.z = transform.position.z;
         }
     }

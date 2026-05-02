@@ -35,12 +35,6 @@ namespace Game
                 suffix = 'q';
             }
 
-<<<<<<< Updated upstream
-=======
-            if (suffix == ' ')
-                return value.ToString();
-
->>>>>>> Stashed changes
             return Math.Round(value, digits).ToString() + suffix;
         }
     }

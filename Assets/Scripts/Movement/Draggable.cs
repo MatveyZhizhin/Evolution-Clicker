@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream
 using UnityEngine;
 using Evolution;
-=======
-using Evolution;
-using UnityEngine;
-using UI;
->>>>>>> Stashed changes
 
 namespace Movement
 {
@@ -18,31 +12,17 @@ namespace Movement
         private bool _isDragging = false;
         private Mergable _mergable;
 
-<<<<<<< Updated upstream
-=======
-        [SerializeField] private bool _ignoreIfEmpty = true;
-        private RectTransform[] _blockedUIZones;
-
->>>>>>> Stashed changes
         public bool IsDragging => _isDragging;
 
         private void Awake()
         {
             _mainCamera = Camera.main;
-<<<<<<< Updated upstream
-=======
-            _blockedUIZones = FindObjectOfType<UIBlockingZones>().GetZones();
->>>>>>> Stashed changes
 
             _mergable = GetComponent<Mergable>();
         }
 
         private void OnMouseDown()
         {
-<<<<<<< Updated upstream
-=======
-            if (IsPointerOverBlockedUI()) return;
->>>>>>> Stashed changes
            
             if (_mergable != null && !_mergable.IsAvailable)
                 return;
@@ -74,31 +54,5 @@ namespace Movement
                 _mergable.TryMerge();
             }
         }
-<<<<<<< Updated upstream
-=======
-
-        private bool IsPointerOverBlockedUI()
-        {
-
-            if (_ignoreIfEmpty && (_blockedUIZones == null || _blockedUIZones.Length == 0))
-                return false;
-
-            Vector2 mousePos = Input.mousePosition;
-
-            foreach (var zone in _blockedUIZones)
-            {
-                if (zone == null) continue;
-                if(!zone.gameObject.activeInHierarchy) continue;
-
-
-                if (RectTransformUtility.RectangleContainsScreenPoint(zone, mousePos, _mainCamera))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
->>>>>>> Stashed changes
     }
 }

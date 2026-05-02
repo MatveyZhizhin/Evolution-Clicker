@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
 using Evolution.Chains;
-=======
->>>>>>> Stashed changes
 using Evolution;
 using UnityEngine;
 

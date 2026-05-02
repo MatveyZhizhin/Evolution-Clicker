@@ -429,11 +429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _balance: 0
-<<<<<<< Updated upstream
-=======
-  <ClickRewardMultiplier>k__BackingField: 1
-  <PassiveRewardMultiplier>k__BackingField: 1
->>>>>>> Stashed changes
 --- !u!114 &1978875582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,10 +442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2052502763}
-<<<<<<< Updated upstream
-=======
-  _additionalText: 
->>>>>>> Stashed changes
   _dataKey: Balance
 --- !u!1 &2052502761
 GameObject:

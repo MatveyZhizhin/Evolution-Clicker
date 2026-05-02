@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 using Evolution.Chains;
 using UnityEngine;
-=======
-using UnityEngine;
-using UnityEngine.UI;
->>>>>>> Stashed changes
 
 namespace Evolution
 {
@@ -30,12 +25,7 @@ namespace Evolution
         public void SetLevel(int level)
         {
             _currentLevel = level;
-<<<<<<< Updated upstream
             gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(level).Sprite;
-=======
-            var image = gameObject.GetComponentInChildren<Image>();
-            image.sprite = _evolutionChain.GetStep(level).Sprite;
->>>>>>> Stashed changes
         }
 
         public void TryMerge()
