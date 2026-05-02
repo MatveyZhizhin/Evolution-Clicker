@@ -1,5 +1,5 @@
-using Evolution.Chains;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Evolution
 {
@@ -25,7 +25,8 @@ namespace Evolution
         public void SetLevel(int level)
         {
             _currentLevel = level;
-            gameObject.GetComponent<SpriteRenderer>().sprite = _evolutionChain.GetStep(level).Sprite;
+            var image = gameObject.GetComponentInChildren<Image>();
+            image.sprite = _evolutionChain.GetStep(level).Sprite;
         }
 
         public void TryMerge()

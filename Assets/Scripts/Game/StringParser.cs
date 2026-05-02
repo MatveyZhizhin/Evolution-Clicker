@@ -35,6 +35,9 @@ namespace Game
                 suffix = 'q';
             }
 
+            if (suffix == ' ')
+                return value.ToString();
+
             return Math.Round(value, digits).ToString() + suffix;
         }
     }

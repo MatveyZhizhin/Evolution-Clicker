@@ -1,6 +1,7 @@
 using Evolution;
 using Spawn;
 using System.Collections;
+using UI;
 using UnityEngine;
 
 namespace Movement
@@ -33,6 +34,7 @@ namespace Movement
         {
             StopWandering();
         }
+
 
         public void StartWandering()
         {
@@ -81,7 +83,7 @@ namespace Movement
 
         private void PickNewTarget()
         {
-            _targetPosition = ScreenUtils.GetRandomVisiblePosition(_mainCamera, 0.5f);
+            _targetPosition = ScreenUtils.GetRandomVisiblePosition(Camera.main, 0.5f);
             _targetPosition.z = transform.position.z;
         }
     }

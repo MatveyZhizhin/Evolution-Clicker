@@ -17,6 +17,25 @@ namespace YG
         public bool[] openLevels = new bool[3];
 
         // Ваши сохранения
+        public long Seconds = 0;
+        public long Balance = 0;
+        public int PassiveRewardMultiplier = 1;
+        public int ClickRewardMultiplier = 1;
+
+        public long[] UpgradeCost = new long[4];
+        public int[] UpgradeLevel = new int[4];
+
+        public long[] ShopCost = new long[8];
+        public int[] PurchasedCount = new int[8];
+
+        public int Count = 0;
+        public int[] Level = new int[12];
+        public float[] X = new float[12];
+        public float[] Y = new float[12];
+
+        public bool[] IsSelected = new bool[4];
+        public bool[] IsBought = new bool[4];
+
 
         // ...
 

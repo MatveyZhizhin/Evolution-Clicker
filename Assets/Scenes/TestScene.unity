@@ -429,6 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _balance: 0
+  <ClickRewardMultiplier>k__BackingField: 1
+  <PassiveRewardMultiplier>k__BackingField: 1
 --- !u!114 &1978875582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2052502763}
+  _additionalText: 
   _dataKey: Balance
 --- !u!1 &2052502761
 GameObject:

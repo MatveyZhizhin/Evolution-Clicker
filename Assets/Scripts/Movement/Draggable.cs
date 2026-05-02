@@ -1,5 +1,6 @@
-using UnityEngine;
 using Evolution;
+using UnityEngine;
+using UI;
 
 namespace Movement
 {
@@ -12,17 +13,22 @@ namespace Movement
         private bool _isDragging = false;
         private Mergable _mergable;
 
+        [SerializeField] private bool _ignoreIfEmpty = true;
+        private RectTransform[] _blockedUIZones;
+
         public bool IsDragging => _isDragging;
 
         private void Awake()
         {
             _mainCamera = Camera.main;
+            _blockedUIZones = FindObjectOfType<UIBlockingZones>().GetZones();
 
             _mergable = GetComponent<Mergable>();
         }
 
         private void OnMouseDown()
         {
+            if (IsPointerOverBlockedUI()) return;
            
             if (_mergable != null && !_mergable.IsAvailable)
                 return;
@@ -53,6 +59,29 @@ namespace Movement
             {
                 _mergable.TryMerge();
             }
+        }
+
+        private bool IsPointerOverBlockedUI()
+        {
+
+            if (_ignoreIfEmpty && (_blockedUIZones == null || _blockedUIZones.Length == 0))
+                return false;
+
+            Vector2 mousePos = Input.mousePosition;
+
+            foreach (var zone in _blockedUIZones)
+            {
+                if (zone == null) continue;
+                if(!zone.gameObject.activeInHierarchy) continue;
+
+
+                if (RectTransformUtility.RectangleContainsScreenPoint(zone, mousePos, _mainCamera))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -1,0 +1,104 @@
+{
+  "idSave": 43,
+  "isFirstSession": false,
+  "language": "ru",
+  "promptDone": false,
+  "money": 1,
+  "newPlayerName": "Hello!",
+  "openLevels": [
+    false,
+    true,
+    false
+  ],
+  "Seconds": 1777753930,
+  "Balance": 6065,
+  "PassiveRewardMultiplier": 1,
+  "ClickRewardMultiplier": 1,
+  "UpgradeCost": [
+    30000,
+    0,
+    12000,
+    10000
+  ],
+  "UpgradeLevel": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "ShopCost": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PurchasedCount": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Count": 7,
+  "Level": [
+    2,
+    1,
+    4,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "X": [
+    2.28532887,
+    7.88526344,
+    0.7465352,
+    5.204479,
+    5.170306,
+    -4.53199,
+    0.418750376,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "Y": [
+    -0.298445851,
+    3.494531,
+    -2.47611356,
+    0.804947555,
+    -0.233171269,
+    -1.8092984,
+    4.19174051,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "IsSelected": [
+    false,
+    false,
+    false,
+    true
+  ],
+  "IsBought": [
+    true,
+    true,
+    true,
+    true
+  ]
+}

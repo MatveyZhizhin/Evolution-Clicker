@@ -1,7 +1,6 @@
-using Evolution.Chains;
-using Spawn;
 using System.Collections;
 using UnityEngine;
+using Spawn;
 
 namespace Evolution
 {
@@ -16,6 +15,9 @@ namespace Evolution
 
         public void StartMerge(Mergable item1, Mergable item2, EvolutionChain config)
         {
+            if (item1.CurrentLevel == config.MaxLevel)
+                return;
+
             item1.SetLocked(true);
             item2.SetLocked(true);
 
@@ -24,6 +26,7 @@ namespace Evolution
 
         private IEnumerator MergeRoutine(Mergable item1, Mergable item2, EvolutionChain config)
         {
+
             Transform t1 = item1.transform;
             Transform t2 = item2.transform;
 
@@ -56,10 +59,10 @@ namespace Evolution
             t1.position = targetPos;
             t2.position = targetPos;
 
-            SpawnNextLevel(targetPos, level, config);
-
             _spawner.RemoveObject(item1.gameObject);
             _spawner.RemoveObject(item2.gameObject);
+
+            SpawnNextLevel(targetPos, level, config);
         }
 
         private void SpawnNextLevel(Vector3 position, int currentLevel, EvolutionChain config)
