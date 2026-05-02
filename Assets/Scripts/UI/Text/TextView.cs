@@ -8,7 +8,10 @@ namespace UI.Text
     {
         [Header("UI References")]
         [SerializeField] private TextMeshProUGUI _text;
+<<<<<<< Updated upstream
         [SerializeField] private string _additionalText;
+=======
+>>>>>>> Stashed changes
 
         [Header("Settings")]
         [Tooltip("Ключ данных, которые должен отображать этот текст (например, 'Balance')")]

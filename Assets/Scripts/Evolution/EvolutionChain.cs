@@ -1,0 +1,45 @@
+using UnityEngine;
+
+namespace Evolution
+{
+    [CreateAssetMenu(fileName = "EvolutionChain", menuName = "Evolution/EvolutionChain")]
+    public class EvolutionChain : ScriptableObject
+    {
+        public float MergeRadius;
+        public float MergeSpeed;
+
+        public GameObject Prefab;
+
+        [System.Serializable]
+        public class EvolutionStep
+        {
+            public string Name;
+            public Sprite Sprite;
+            public int MoneyPerClick;
+            public int MoneyPerSecond;
+        }
+
+        [SerializeField] private EvolutionStep[] _steps;
+
+        public EvolutionStep GetStep(int level)
+        {
+            if (level >= 0 && level < _steps.Length)
+                return _steps[level];
+
+            return null;
+        }
+
+        public int GetLevel(Sprite sprite)
+        {
+            for (int i = 0; i < _steps.Length; i++)
+            {
+                if (sprite == _steps[i].Sprite)
+                    return i;
+            }
+
+            return 0;
+        }
+
+        public int MaxLevel => _steps.Length - 1;
+    }
+}

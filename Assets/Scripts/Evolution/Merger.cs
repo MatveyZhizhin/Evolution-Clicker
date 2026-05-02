@@ -1,7 +1,13 @@
+<<<<<<< Updated upstream
 using Evolution.Chains;
 using Spawn;
 using System.Collections;
 using UnityEngine;
+=======
+using System.Collections;
+using UnityEngine;
+using Spawn;
+>>>>>>> Stashed changes
 
 namespace Evolution
 {
@@ -16,6 +22,12 @@ namespace Evolution
 
         public void StartMerge(Mergable item1, Mergable item2, EvolutionChain config)
         {
+<<<<<<< Updated upstream
+=======
+            if (item1.CurrentLevel == config.MaxLevel)
+                return;
+
+>>>>>>> Stashed changes
             item1.SetLocked(true);
             item2.SetLocked(true);
 
@@ -24,6 +36,10 @@ namespace Evolution
 
         private IEnumerator MergeRoutine(Mergable item1, Mergable item2, EvolutionChain config)
         {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             Transform t1 = item1.transform;
             Transform t2 = item2.transform;
 
@@ -56,10 +72,17 @@ namespace Evolution
             t1.position = targetPos;
             t2.position = targetPos;
 
+<<<<<<< Updated upstream
             SpawnNextLevel(targetPos, level, config);
 
             _spawner.RemoveObject(item1.gameObject);
             _spawner.RemoveObject(item2.gameObject);
+=======
+            _spawner.RemoveObject(item1.gameObject);
+            _spawner.RemoveObject(item2.gameObject);
+
+            SpawnNextLevel(targetPos, level, config);
+>>>>>>> Stashed changes
         }
 
         private void SpawnNextLevel(Vector3 position, int currentLevel, EvolutionChain config)
