@@ -6,6 +6,8 @@ using Money;
 using System;
 using Movement;
 using Random = UnityEngine.Random;
+using Timer = UI.Timer;
+using Tutorial;
 
 namespace Spawn
 {
@@ -18,7 +20,9 @@ namespace Spawn
 
 
         [SerializeField] private EvolutionChain _evolutionChain;
+        [SerializeField] private Timer _timer;
         private Balance _balance;
+        private TutorialManager _tutorialManager;
 
         public float SpawnRate { get => _spawnRate; set => _spawnRate = value; }
         public int StartLevel { get => _startLevel; set => _startLevel = value; }
@@ -30,6 +34,7 @@ namespace Spawn
         private void Awake()
         {
             _balance = FindObjectOfType<Balance>();
+            _tutorialManager = FindObjectOfType<TutorialManager>();
         }
 
         public GameObject[] GetObjects()
@@ -46,13 +51,21 @@ namespace Spawn
         {
             while (true)
             {
+                if (!HasSpaceToSpawn())
+                {
+                    _timer.EndTimer();
+                }
+
                 SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
-        
-                yield return new WaitForSeconds(_spawnRate);           
+
+
+                yield return new WaitUntil(_tutorialManager.GetTutorialCompletion);
+                _timer.StartTimer(_spawnRate);
+                yield return new WaitForSeconds(_spawnRate);
             }
         }
 
-        private bool HasSpaceToSpawn() => _spawnedObjects.Count < _maxObjects;
+        public bool HasSpaceToSpawn() => _spawnedObjects.Count < _maxObjects;
 
         public void RemoveObject(GameObject obj)
         {
@@ -90,6 +103,7 @@ namespace Spawn
             objectEconomy.Initialize(_balance, _evolutionChain);
 
             ObjectChanged?.Invoke();
+            _tutorialManager.OnObjectSpawn();
         }
 
         public void SpawnObjectWithRandomPosition(int level, int amount)

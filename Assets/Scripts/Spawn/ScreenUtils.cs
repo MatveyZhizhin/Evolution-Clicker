@@ -13,6 +13,7 @@ namespace Spawn
             foreach (var zone in uiZones)
             {
                 if (zone == null) continue;
+                if (!zone.gameObject.activeInHierarchy) continue;
 
                 if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
                     zone,

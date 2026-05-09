@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5056898868845371490}
   m_Layer: 5
   m_Name: Spawnable
-  m_TagString: Untagged
+  m_TagString: Mergable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1aa55d2f92720247a9c71cc888aaa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ignoreIfEmpty: 1
 --- !u!114 &5886125369183831372
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
 using Money;
 using Spawn;
+using System;
+using UnityEngine;
 
 namespace Upgrades
 {
@@ -17,6 +19,9 @@ namespace Upgrades
 
         protected override void Upgrade()
         {
+            if (_spawner.SpawnRate - _value <= 0)
+                return;
+
             base.Upgrade();
             _spawner.SpawnRate -= _value;
         }

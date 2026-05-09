@@ -33,13 +33,13 @@ MonoBehaviour:
   loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 0
+  flush: 1
   localSaveSync: 1
   saveCloudInterval: 5
   saveOnQuitGame: 1
   quitGameParameters:
-    objectName: YandexGame
-    methodName: _SaveProgress
+    objectName: SaveManager
+    methodName: Save
   leaderboardEnable: 1
   saveScoreAnonymousPlayers: 1
   leaderboardSimulation:
@@ -324,6 +324,60 @@ MonoBehaviour:
     consumed: 1
   - id: 3
     title: "\u0424\u043E\u043D4"
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 100
+    title: 100
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 1000
+    title: 1000
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 100000
+    title: 100000
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 1000000
+    title: 1000000
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 100000000
+    title: 100000000
+    description: 
+    imageURI: 
+    price: 5 YAN
+    priceValue: 5
+    priceCurrencyCode: YAN
+    currencyImageURL: 
+    consumed: 1
+  - id: 1000000000
+    title: 1000000000
     description: 
     imageURI: 
     price: 5 YAN

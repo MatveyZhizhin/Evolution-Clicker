@@ -36,6 +36,8 @@ namespace YG
         public bool[] IsSelected = new bool[4];
         public bool[] IsBought = new bool[4];
 
+        public bool IsTutorialCompleted = false;
+
 
         // ...
 

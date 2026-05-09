@@ -1,16 +1,21 @@
 using System.Collections;
 using UnityEngine;
 using Spawn;
+using Tutorial;
 
 namespace Evolution
 {
     public class Merger : MonoBehaviour
     {
         private Spawner _spawner;
+        private TutorialManager _tutorialManager;
+
+        [SerializeField] private AudioSource _mergeSFX;
 
         private void Awake()
         {
             _spawner = FindObjectOfType<Spawner>();
+            _tutorialManager = FindObjectOfType<TutorialManager>();
         }
 
         public void StartMerge(Mergable item1, Mergable item2, EvolutionChain config)
@@ -63,6 +68,7 @@ namespace Evolution
             _spawner.RemoveObject(item2.gameObject);
 
             SpawnNextLevel(targetPos, level, config);
+            _mergeSFX.Play();
         }
 
         private void SpawnNextLevel(Vector3 position, int currentLevel, EvolutionChain config)
@@ -73,6 +79,8 @@ namespace Evolution
             {
                 _spawner.SpawnObject(nextLevel, position);
             }
+
+            _tutorialManager.OnObjectMerged();
         }
     }
 }

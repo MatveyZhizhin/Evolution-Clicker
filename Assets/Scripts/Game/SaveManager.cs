@@ -2,11 +2,12 @@ using Money;
 using Spawn;
 using YG;
 using Evolution;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using Upgrades;
 using Game.Skins;
+using Tutorial;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -14,20 +15,35 @@ namespace Game
     {
         private Balance _balance;
         private Spawner _spawner;
+        private TutorialManager _tutorialManager;
 
         [SerializeField] private Upgrader[] _upgraders;
         [SerializeField] private ShopItem[] _shopItems;
         [SerializeField] private Skin[] _skins;
+        [SerializeField] private string _leaderboardName;
 
         private void Awake()
         {
             _balance = FindObjectOfType<Balance>();
             _spawner = FindObjectOfType<Spawner>();
+            _tutorialManager = FindObjectOfType<TutorialManager>();
         }
 
         private void Save()
         {
+            YandexGame.savesData.IsTutorialCompleted = _tutorialManager.IsTutorialCompleted;
+
+            if (!_tutorialManager.IsTutorialCompleted)
+            {
+                YandexGame.SaveProgress();
+                return;
+            }               
+
             YandexGame.savesData.Seconds = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+            if (_balance.BalanceValue > YandexGame.savesData.Balance)
+                YandexGame.NewLeaderboardScores(_leaderboardName, _balance.BalanceValue);
+
             YandexGame.savesData.Balance = _balance.BalanceValue;
 
             YandexGame.savesData.ClickRewardMultiplier = _balance.ClickRewardMultiplier;
@@ -73,9 +89,15 @@ namespace Game
 
         private void Load()
         {
+            _tutorialManager.IsTutorialCompleted = YandexGame.savesData.IsTutorialCompleted;
+
+            if (!_tutorialManager.IsTutorialCompleted)
+                return;
+
             _balance.BalanceValue = YandexGame.savesData.Balance;
             _balance.ClickRewardMultiplier = YandexGame.savesData.ClickRewardMultiplier;
             _balance.PassiveRewardMultiplier = YandexGame.savesData.PassiveRewardMultiplier;
+
 
             for (int i = 0; i < _upgraders.Length; i++)
             {
@@ -101,6 +123,7 @@ namespace Game
             }
         }
 
+#if UNITY_EDITOR
         private void ResetProgress()
         {
             YandexGame.ResetSaveProgress();
@@ -114,6 +137,7 @@ namespace Game
                 ResetProgress();
             }
         }
+#endif
 
         private void OnApplicationQuit()
         {

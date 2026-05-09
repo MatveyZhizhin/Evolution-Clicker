@@ -1,4 +1,8 @@
 using Evolution;
+using Floating;
+using Spawn;
+using Tutorial;
+using UI;
 using UnityEngine;
 
 namespace Money
@@ -8,19 +12,34 @@ namespace Money
     {
         private EvolutionChain _config;
         private Balance _globalBalance;
+        private TutorialManager _turorialManager;
 
         private Mergable _mergable;
+        private FloatingTextSpawner _floatingTextSpawner;
+
+        private RectTransform[] _uiBlockingElements;
 
         private void Awake()
         {
             _mergable = GetComponent<Mergable>();
+            _uiBlockingElements = FindObjectOfType<UIBlockingZones>().GetZones();
+            _turorialManager = FindObjectOfType<TutorialManager>();
+        }
+
+        private void Start()
+        {
+            _floatingTextSpawner = FindObjectOfType<FloatingTextSpawner>();
         }
 
         private void OnMouseDown()
         {
+
             if (_mergable != null && !_mergable.IsAvailable) return;
 
+            if (ScreenUtils.IsPointUnderUI(transform.position, Camera.main, _uiBlockingElements)) return;
+
             GiveClickReward();
+            _turorialManager.OnObjectClicked(gameObject);
         }
 
         private void GiveClickReward()
@@ -33,6 +52,7 @@ namespace Money
             if (step != null)
             {
                 _globalBalance.IncreaseBalance(step.MoneyPerClick * _globalBalance.ClickRewardMultiplier);
+                _floatingTextSpawner.Show("+" + (step.MoneyPerClick * _globalBalance.ClickRewardMultiplier), transform.position);
             }
         }
 

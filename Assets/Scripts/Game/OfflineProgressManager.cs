@@ -1,6 +1,7 @@
 using Money;
 using Spawn;
 using System;
+using Tutorial;
 using UnityEngine;
 using YG;
 
@@ -8,20 +9,23 @@ namespace Game
 {
     public class OfflineProgressManager : MonoBehaviour
     {
-
         [SerializeField] private int _maxOfflineHours = 24;
 
         private Balance _balance;
         private Spawner _spawner;
+        private TutorialManager _tutorialManager;
 
         private void Awake()
         {
             _balance = FindObjectOfType<Balance>();
             _spawner = FindObjectOfType<Spawner>();
+            _tutorialManager = FindObjectOfType<TutorialManager>();
         }
 
         private void Start()
         {
+            if (!_tutorialManager.IsTutorialCompleted) return;
+
             HandleOfflineProgress();
         }
 
