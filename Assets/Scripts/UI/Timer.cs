@@ -43,6 +43,7 @@ namespace UI
         public void StartTimer(float time)
         {
             _startTime = time;
+            _time = _startTime;
             Started?.Invoke();
             _onStart?.Invoke();
             _isStarted = true;

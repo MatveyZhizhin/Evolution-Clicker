@@ -48,6 +48,8 @@ namespace Game
 
             YandexGame.savesData.ClickRewardMultiplier = _balance.ClickRewardMultiplier;
             YandexGame.savesData.PassiveRewardMultiplier = _balance.PassiveRewardMultiplier;
+            YandexGame.savesData.SpawnRate = _spawner.SpawnRate;
+            YandexGame.savesData.StartLevel = _spawner.StartLevel;
 
             for (int i = 0; i < _upgraders.Length; i++)
             {
@@ -97,6 +99,8 @@ namespace Game
             _balance.BalanceValue = YandexGame.savesData.Balance;
             _balance.ClickRewardMultiplier = YandexGame.savesData.ClickRewardMultiplier;
             _balance.PassiveRewardMultiplier = YandexGame.savesData.PassiveRewardMultiplier;
+            _spawner.SpawnRate = YandexGame.savesData.SpawnRate;
+            _spawner.StartLevel = YandexGame.savesData.StartLevel;
 
 
             for (int i = 0; i < _upgraders.Length; i++)

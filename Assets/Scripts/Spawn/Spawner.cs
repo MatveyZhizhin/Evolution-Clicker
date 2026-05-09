@@ -51,15 +51,11 @@ namespace Spawn
         {
             while (true)
             {
-                if (!HasSpaceToSpawn())
-                {
-                    _timer.EndTimer();
-                }
-
                 SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
 
 
                 yield return new WaitUntil(_tutorialManager.GetTutorialCompletion);
+                yield return new WaitUntil(HasSpaceToSpawn);
                 _timer.StartTimer(_spawnRate);
                 yield return new WaitForSeconds(_spawnRate);
             }

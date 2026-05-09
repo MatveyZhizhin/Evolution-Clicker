@@ -21,6 +21,8 @@ namespace YG
         public long Balance = 0;
         public int PassiveRewardMultiplier = 1;
         public int ClickRewardMultiplier = 1;
+        public float SpawnRate = 30;
+        public int StartLevel = 0;
 
         public long[] UpgradeCost = new long[4];
         public int[] UpgradeLevel = new int[4];

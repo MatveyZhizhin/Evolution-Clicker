@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Tutorial
@@ -8,6 +9,7 @@ namespace Tutorial
     {
         [Header("Settings")]
         [SerializeField] private TutorialStep _firstStep;
+        [SerializeField] private TextMeshProUGUI _shopText;
 
         private TutorialStep _currentStep;
         private TutorialHighlight _highlight;
@@ -20,7 +22,12 @@ namespace Tutorial
 
         private void Start()
         {
-            if (IsTutorialCompleted) return;
+            if (IsTutorialCompleted)
+            {
+                _shopText.gameObject.SetActive(false);
+                return;
+            }
+                
 
             if (_firstStep != null)
                 StartStep(_firstStep);
@@ -112,6 +119,8 @@ namespace Tutorial
         public void OnObjectClicked(GameObject clickedObj)
         {        
             if (_currentStep == null || _currentStep.completionTrigger != TutorialStep.TriggerType.OnClickObject) return;
+
+            _shopText.gameObject.SetActive(false);
 
             // Проверка тега или ссылки
             if (!string.IsNullOrEmpty(_currentStep.targetTag) && clickedObj.CompareTag(_currentStep.targetTag))

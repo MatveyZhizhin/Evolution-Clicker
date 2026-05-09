@@ -6,8 +6,6 @@ namespace Purchases
 {
     public class MoneyPurchaseProvider : MonoBehaviour
     {
-        [SerializeField] private string _id;
-
         private Balance _balance;
 
         private void Awake()
@@ -17,7 +15,7 @@ namespace Purchases
 
         protected void Purchase(string id)
         {     
-            if (id != _id) return;
+            if (int.Parse(id) < 100) return;
 
             _balance.IncreaseBalance(int.Parse(id));
         }
