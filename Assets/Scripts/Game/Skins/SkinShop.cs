@@ -11,6 +11,13 @@ namespace Game.Skins
 
         [SerializeField] private Image _background;
 
+        private SaveManager _saveManager;
+
+        private void Awake()
+        {
+            _saveManager = FindObjectOfType<SaveManager>();
+        }
+
         private void Start()
         {
             foreach (var skin in _skins)
@@ -49,7 +56,9 @@ namespace Game.Skins
                     skin.Buy();
                     ChangeSkin(_skins.IndexOf(skin));
                 }
-            }          
+            } 
+            
+            _saveManager.Save();
         }
 
         private void OnEnable()

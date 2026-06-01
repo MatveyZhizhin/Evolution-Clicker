@@ -51,7 +51,10 @@ namespace Spawn
         {
             while (true)
             {
-                SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
+                if (_spawnedObjects.Count == 0)
+                {
+                    SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
+                }             
 
 
                 yield return new WaitUntil(_tutorialManager.GetTutorialCompletion);

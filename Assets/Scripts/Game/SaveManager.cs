@@ -8,6 +8,8 @@ using Upgrades;
 using Game.Skins;
 using Tutorial;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Game
 {
@@ -22,24 +24,24 @@ namespace Game
         [SerializeField] private Skin[] _skins;
         [SerializeField] private string _leaderboardName;
 
+        [SerializeField] private int _autoSaveInterval;
+
         private void Awake()
         {
             _balance = FindObjectOfType<Balance>();
             _spawner = FindObjectOfType<Spawner>();
             _tutorialManager = FindObjectOfType<TutorialManager>();
+            Load();
         }
 
-        private void Save()
+        private void Start()
+        {
+            StartCoroutine(AutoSave());
+        }
+
+        public void Save()
         {
             YandexGame.savesData.IsTutorialCompleted = _tutorialManager.IsTutorialCompleted;
-
-            if (!_tutorialManager.IsTutorialCompleted)
-            {
-                YandexGame.SaveProgress();
-                return;
-            }               
-
-            YandexGame.savesData.Seconds = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
             if (_balance.BalanceValue > YandexGame.savesData.Balance)
                 YandexGame.NewLeaderboardScores(_leaderboardName, _balance.BalanceValue);
@@ -91,10 +93,7 @@ namespace Game
 
         private void Load()
         {
-            _tutorialManager.IsTutorialCompleted = YandexGame.savesData.IsTutorialCompleted;
-
-            if (!_tutorialManager.IsTutorialCompleted)
-                return;
+            _tutorialManager.IsTutorialCompleted = YandexGame.savesData.IsTutorialCompleted;       
 
             _balance.BalanceValue = YandexGame.savesData.Balance;
             _balance.ClickRewardMultiplier = YandexGame.savesData.ClickRewardMultiplier;
@@ -142,20 +141,13 @@ namespace Game
             }
         }
 #endif
-
-        private void OnApplicationQuit()
+        private IEnumerator AutoSave()
         {
-            Save();
-        }
-
-        private void OnEnable()
-        {
-            YandexGame.GetDataEvent += Load;
-        }
-
-        private void OnDisable()
-        {
-            YandexGame.GetDataEvent -= Load;
+            while (true)
+            {
+                yield return new WaitForSeconds(_autoSaveInterval);
+                Save();
+            }
         }
     }
 }

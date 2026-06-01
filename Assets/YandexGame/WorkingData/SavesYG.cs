@@ -39,6 +39,7 @@ namespace YG
         public bool[] IsBought = new bool[4];
 
         public bool IsTutorialCompleted = false;
+        public int CurrentStepIndex = 0;
 
 
         // ...
