@@ -9,7 +9,6 @@ using Game.Skins;
 using Tutorial;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Game
 {
@@ -31,7 +30,6 @@ namespace Game
             _balance = FindObjectOfType<Balance>();
             _spawner = FindObjectOfType<Spawner>();
             _tutorialManager = FindObjectOfType<TutorialManager>();
-            Load();
         }
 
         private void Start()
@@ -126,11 +124,13 @@ namespace Game
             }
         }
 
-#if UNITY_EDITOR
+
         private void ResetProgress()
         {
             YandexGame.ResetSaveProgress();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            YandexGame.NewLeaderboardScores(_leaderboardName, 0);
+            YandexGame.SaveProgress();
+            SceneManager.LoadScene(0);
         }
 
         private void Update()
@@ -140,7 +140,17 @@ namespace Game
                 ResetProgress();
             }
         }
-#endif
+
+        private void OnEnable()
+        {
+            YandexGame.GetDataEvent += Load;
+        }
+
+        private void OnDisable()
+        {
+            YandexGame.GetDataEvent -= Load;
+        }
+
         private IEnumerator AutoSave()
         {
             while (true)

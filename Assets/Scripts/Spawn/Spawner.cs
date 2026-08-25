@@ -61,6 +61,7 @@ namespace Spawn
                 yield return new WaitUntil(HasSpaceToSpawn);
                 _timer.StartTimer(_spawnRate);
                 yield return new WaitForSeconds(_spawnRate);
+                SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
             }
         }
 

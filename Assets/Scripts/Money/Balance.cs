@@ -34,9 +34,13 @@ namespace Money
             _spawner = FindObjectOfType<Spawner>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             OnDataChanged?.Invoke(KEY_BALANCE, StringParser.ParseFloatToShortString(_balance, 2));
+        }
+
+        private void OnEnable()
+        {
             DisplayPassiveIncome();
             _spawner.ObjectChanged += DisplayPassiveIncome;
         }

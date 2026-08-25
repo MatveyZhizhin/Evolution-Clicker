@@ -1,5 +1,5 @@
 {
-  "idSave": 363,
+  "idSave": 61960,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -11,16 +11,16 @@
     false
   ],
   "Seconds": 0,
-  "Balance": 48,
+  "Balance": 2373,
   "PassiveRewardMultiplier": 1,
   "ClickRewardMultiplier": 1,
   "SpawnRate": 30.0,
   "StartLevel": 0,
   "UpgradeCost": [
-    0,
-    0,
-    0,
-    0
+    30000,
+    1000000,
+    12000,
+    10000
   ],
   "UpgradeLevel": [
     0,
@@ -29,17 +29,17 @@
     0
   ],
   "ShopCost": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    880,
+    1500,
+    4000,
+    12000,
+    34000,
+    96000,
+    270000,
+    700000
   ],
   "PurchasedCount": [
-    2,
+    1,
     0,
     0,
     0,
@@ -48,9 +48,9 @@
     0,
     0
   ],
-  "Count": 2,
+  "Count": 1,
   "Level": [
-    0,
+    2,
     1,
     0,
     0,
@@ -64,9 +64,9 @@
     0
   ],
   "X": [
-    4.435131,
-    3.89281845,
-    2.711754,
+    0.857325256,
+    0.8573247,
+    -4.37334871,
     0.0,
     0.0,
     0.0,
@@ -78,9 +78,9 @@
     0.0
   ],
   "Y": [
-    1.43013179,
-    -1.07342672,
-    -4.03657627,
+    -1.168517,
+    -1.16851664,
+    1.934734,
     0.0,
     0.0,
     0.0,
@@ -92,17 +92,17 @@
     0.0
   ],
   "IsSelected": [
-    false,
+    true,
     false,
     false,
     false
   ],
   "IsBought": [
-    false,
+    true,
     false,
     false,
     false
   ],
-  "IsTutorialCompleted": false,
+  "IsTutorialCompleted": true,
   "CurrentStepIndex": 0
 }

@@ -17,8 +17,9 @@ namespace YG
         public bool[] openLevels = new bool[3];
 
         // Ваши сохранения
+
         public long Seconds = 0;
-        public long Balance = 0;
+        public long Balance = 3000;
         public int PassiveRewardMultiplier = 1;
         public int ClickRewardMultiplier = 1;
         public float SpawnRate = 30;
@@ -41,7 +42,6 @@ namespace YG
         public bool IsTutorialCompleted = false;
         public int CurrentStepIndex = 0;
 
-
         // ...
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
@@ -53,6 +53,19 @@ namespace YG
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
+
+            UpgradeCost[0] = 30000;
+            UpgradeCost[1] = 1000000;
+            UpgradeCost[2] = 12000;
+            UpgradeCost[3] = 10000;
+            ShopCost[0] = 800;
+            ShopCost[1] = 1500;
+            ShopCost[2] = 4000;
+            ShopCost[3] = 12000;
+            ShopCost[4] = 34000;
+            ShopCost[5] = 96000;
+            ShopCost[6] = 270000;
+            ShopCost[7] = 700000;
         }
     }
 }
