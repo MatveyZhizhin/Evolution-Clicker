@@ -1,5 +1,5 @@
 {
-  "idSave": 432,
+  "idSave": 363,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -11,16 +11,16 @@
     false
   ],
   "Seconds": 0,
-  "Balance": 3019,
+  "Balance": 48,
   "PassiveRewardMultiplier": 1,
   "ClickRewardMultiplier": 1,
   "SpawnRate": 30.0,
   "StartLevel": 0,
   "UpgradeCost": [
-    30000,
-    1000000,
-    12000,
-    10000
+    0,
+    0,
+    0,
+    0
   ],
   "UpgradeLevel": [
     0,
@@ -29,16 +29,6 @@
     0
   ],
   "ShopCost": [
-    800,
-    1500,
-    4000,
-    12000,
-    34000,
-    96000,
-    270000,
-    700000
-  ],
-  "PurchasedCount": [
     0,
     0,
     0,
@@ -48,10 +38,20 @@
     0,
     0
   ],
-  "Count": 1,
+  "PurchasedCount": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Count": 2,
   "Level": [
     0,
-    0,
+    1,
     0,
     0,
     0,
@@ -64,9 +64,9 @@
     0
   ],
   "X": [
-    4.79135036,
-    0.0,
-    0.0,
+    4.435131,
+    3.89281845,
+    2.711754,
     0.0,
     0.0,
     0.0,
@@ -78,9 +78,9 @@
     0.0
   ],
   "Y": [
-    -0.523323357,
-    0.0,
-    0.0,
+    1.43013179,
+    -1.07342672,
+    -4.03657627,
     0.0,
     0.0,
     0.0,
@@ -99,7 +99,7 @@
   ],
   "IsBought": [
     false,
-    true,
+    false,
     false,
     false
   ],
