@@ -125,7 +125,7 @@ namespace Game
         }
 
 
-        private void ResetProgress()
+        public void ResetProgress()
         {
             YandexGame.ResetSaveProgress();
             YandexGame.NewLeaderboardScores(_leaderboardName, 0);

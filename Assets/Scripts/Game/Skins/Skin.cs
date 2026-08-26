@@ -8,6 +8,7 @@ namespace Game.Skins
     {
         [SerializeField] private bool _isBought;
         [SerializeField] private bool _isSelected;
+        [SerializeField] private bool _isAdRreward;
 
         [SerializeField] private Image _background;
         [SerializeField] private string _id;
@@ -17,6 +18,7 @@ namespace Game.Skins
 
         public bool IsBought { get => _isBought; set => _isBought = value; }
         public bool IsSelected { get => _isSelected; set => _isSelected = value; }
+        public bool IsAdReward => _isAdRreward;
         public string Id => _id;
 
         public void Select(ref Image image) 

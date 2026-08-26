@@ -37,11 +37,18 @@ namespace Upgrades
         }
 
         private void Start()
-        {
-            DisplayText(StringParser.ParseFloatToShortString(_cost, 1), KEY_COST);
-            DisplayText(GetDisplayableText(), KEY_UPGRADE);
+        {        
             OnValueChanged?.Invoke(_currentLevel, _maxLevel);
             OnDataChanged?.Invoke(KEY_LEVEL, $"{_currentLevel}/{_maxLevel}");
+            if (IsMaxLevel())
+            {
+                DisplayText("Макс", KEY_COST);
+                DisplayText("Макс", KEY_UPGRADE);
+                _onMaxLevel.Invoke();
+                return;
+            }
+            DisplayText(StringParser.ParseFloatToShortString(_cost, 1), KEY_COST);
+            DisplayText(GetDisplayableText(), KEY_UPGRADE);
         }
 
         public virtual void HandleUpgrade()

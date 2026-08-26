@@ -28,8 +28,8 @@ namespace YG
         public long[] UpgradeCost = new long[4];
         public int[] UpgradeLevel = new int[4];
 
-        public long[] ShopCost = new long[8];
-        public int[] PurchasedCount = new int[8];
+        public long[] ShopCost = new long[19];
+        public int[] PurchasedCount = new int[19];
 
         public int Count = 0;
         public int[] Level = new int[12];
@@ -66,6 +66,17 @@ namespace YG
             ShopCost[5] = 96000;
             ShopCost[6] = 270000;
             ShopCost[7] = 700000;
+            ShopCost[8] = 1974000;
+            ShopCost[9] = 5566680;
+            ShopCost[10] = 15698037;
+            ShopCost[11] = 44268466;
+            ShopCost[12] = 352040549;
+            ShopCost[13] = 992754348;
+            ShopCost[14] = 2799567264;
+            ShopCost[15] = 7894779684;
+            ShopCost[16] = 22263278710;
+            ShopCost[17] = 62782445963;
+            ShopCost[18] = 177046497617;
         }
     }
 }

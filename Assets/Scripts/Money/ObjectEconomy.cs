@@ -1,5 +1,6 @@
 using Evolution;
 using Floating;
+using Game;
 using Spawn;
 using Tutorial;
 using UI;
@@ -52,7 +53,7 @@ namespace Money
             if (step != null)
             {
                 _globalBalance.IncreaseBalance(step.MoneyPerClick * _globalBalance.ClickRewardMultiplier);
-                _floatingTextSpawner.Show("+" + (step.MoneyPerClick * _globalBalance.ClickRewardMultiplier), transform.position);
+                _floatingTextSpawner.Show("+" + StringParser.ParseFloatToShortString(step.MoneyPerClick * _globalBalance.ClickRewardMultiplier,1), transform.position);
             }
         }
 

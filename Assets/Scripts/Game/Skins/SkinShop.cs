@@ -51,7 +51,7 @@ namespace Game.Skins
         {    
             foreach (var skin in _skins)
             {
-                if (skin.Id == id)
+                if (skin.Id == id && !skin.IsAdReward)
                 {
                     skin.Buy();
                     ChangeSkin(_skins.IndexOf(skin));
@@ -61,14 +61,35 @@ namespace Game.Skins
             _saveManager.Save();
         }
 
+        public void BuyByAd(int id)
+        {
+
+            foreach (var skin in _skins)
+            {
+                if (skin.IsAdReward)
+                {
+                    if (skin.Id == id.ToString())
+                    {
+                        skin.Buy();
+                        ChangeSkin(_skins.IndexOf(skin));
+                        break;
+                    }
+                }
+            }
+
+            _saveManager.Save();
+        }
+
         private void OnEnable()
         {
             YandexGame.PurchaseSuccessEvent += BuySkin;
+            YandexGame.RewardVideoEvent += BuyByAd;
         }
 
         private void OnDisable()
         {
             YandexGame.PurchaseSuccessEvent -= BuySkin;
+            YandexGame.RewardVideoEvent -= BuyByAd;
         }
     }
 }

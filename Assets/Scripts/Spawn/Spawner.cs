@@ -53,7 +53,7 @@ namespace Spawn
             {
                 if (_spawnedObjects.Count == 0)
                 {
-                    SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
+                    SpawnObjectWithRandomPosition(GetRandomLevel());
                 }             
 
 
@@ -61,7 +61,7 @@ namespace Spawn
                 yield return new WaitUntil(HasSpaceToSpawn);
                 _timer.StartTimer(_spawnRate);
                 yield return new WaitForSeconds(_spawnRate);
-                SpawnObjectWithRandomPosition(Random.Range(0, _startLevel));
+                SpawnObjectWithRandomPosition(GetRandomLevel());
             }
         }
 
@@ -115,6 +115,20 @@ namespace Spawn
 
                 SpawnObjectWithRandomPosition(level);
             }
+        }
+
+        private int GetRandomLevel()
+        {
+            var level = Random.Range(0, _startLevel);
+
+            if (_spawnedObjects.Count == _maxObjects - 1)
+            {
+                level = _spawnedObjects[Random.Range(0, _spawnedObjects.Count - 1)].GetComponent<Mergable>().CurrentLevel;
+                while (level > _startLevel)
+                    level = _spawnedObjects[Random.Range(0, _spawnedObjects.Count - 1)].GetComponent<Mergable>().CurrentLevel;
+            }
+
+            return level;
         }
     }
 }

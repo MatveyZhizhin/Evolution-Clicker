@@ -77,7 +77,7 @@ namespace Money
             {
                 _balance.DecreaseBalance(_cost);
                 _spawner.SpawnObjectWithRandomPosition(_level);
-                _cost = Mathf.RoundToInt(_cost * _costMultiplier);
+                _cost = (long)(_cost * _costMultiplier);
                 OnDataChanged?.Invoke(KEY_COST, StringParser.ParseFloatToShortString(_cost, 1));
                 _purchasedCount++;
                 OnDataChanged?.Invoke(KEY_PURCHASED_COUNT, $"Куплено:{StringParser.ParseFloatToShortString(_purchasedCount, 1)}");

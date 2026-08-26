@@ -27,7 +27,7 @@ MonoBehaviour:
   AdWhenLoadingScene: 0
   showFirstAd: 1
   rewardedAfterClosing: 1
-  adDisplayCalls: 0
+  adDisplayCalls: 1
   fullscreenAdInterval: 60
   durationOfAdSimulation: 0.5
   loadAdWithDelaySimulation: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 1
+  LocalizationEnable: 0
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
@@ -246,6 +246,35 @@ MonoBehaviour:
     it: []
     de: []
     hi: []
+  fontsTMP:
+    defaultFont: []
+    ru: []
+    en: []
+    tr: []
+    az: []
+    be: []
+    he: []
+    hy: []
+    ka: []
+    et: []
+    fr: []
+    kk: []
+    ky: []
+    lt: []
+    lv: []
+    ro: []
+    tg: []
+    tk: []
+    uk: []
+    uz: []
+    es: []
+    pt: []
+    ar: []
+    id: []
+    ja: []
+    it: []
+    de: []
+    hi: []
   fontsSizeCorrect:
     ru: 
     en: 
@@ -275,7 +304,7 @@ MonoBehaviour:
     de: 
     hi: 
   purshasesSimulation:
-  - id: gun
+  - id: 100
     title: Gun
     description: Product - Gun
     imageURI: https://justplaygames.ru/public/Paymant1.png
@@ -284,7 +313,7 @@ MonoBehaviour:
     priceCurrencyCode: YAN
     currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
     consumed: 1
-  - id: armor
+  - id: 1000
     title: Armor
     description: Product - Armor
     imageURI: https://justplaygames.ru/public/Paymant2.png
@@ -293,7 +322,25 @@ MonoBehaviour:
     priceCurrencyCode: YAN
     currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
     consumed: 1
-  - id: grenade
+  - id: 1000000000
+    title: Grenade
+    description: Product - Grenade
+    imageURI: https://justplaygames.ru/public/Paymant3.png
+    price: 30 YAN
+    priceValue: 30
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 1
+    title: Grenade
+    description: Product - Grenade
+    imageURI: https://justplaygames.ru/public/Paymant3.png
+    price: 30 YAN
+    priceValue: 30
+    priceCurrencyCode: YAN
+    currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+    consumed: 1
+  - id: 2
     title: Grenade
     description: Product - Grenade
     imageURI: https://justplaygames.ru/public/Paymant3.png

@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 0}
+  m_AnchoredPosition: {x: 20.6, y: 0}
   m_SizeDelta: {x: 76, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3426889756551303847
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4611c21c7c3fa93459b233f319602afd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edb929f16b67bc74ca474c7f52f56f4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +100
+  m_text: "+100,0\u041A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d93d0906970a804b9ba4a5308f2b78a, type: 2}
   m_sharedMaterial: {fileID: -4444614950574857197, guid: 1d93d0906970a804b9ba4a5308f2b78a, type: 2}
@@ -168,12 +168,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &9177381655206054894
 MonoBehaviour:
   m_ObjectHideFlags: 0

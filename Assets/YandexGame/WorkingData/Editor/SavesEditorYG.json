@@ -1,5 +1,5 @@
 {
-  "idSave": 61960,
+  "idSave": 63977,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -11,7 +11,7 @@
     false
   ],
   "Seconds": 0,
-  "Balance": 2373,
+  "Balance": 3000,
   "PassiveRewardMultiplier": 1,
   "ClickRewardMultiplier": 1,
   "SpawnRate": 30.0,
@@ -29,17 +29,39 @@
     0
   ],
   "ShopCost": [
-    880,
+    800,
     1500,
     4000,
     12000,
     34000,
     96000,
     270000,
-    700000
+    700000,
+    1974000,
+    5566680,
+    15698037,
+    44268466,
+    352040549,
+    992754348,
+    2799567264,
+    7894779684,
+    22263278710,
+    62782445963,
+    177046497617
   ],
   "PurchasedCount": [
-    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -48,10 +70,10 @@
     0,
     0
   ],
-  "Count": 1,
+  "Count": 0,
   "Level": [
-    2,
-    1,
+    0,
+    0,
     0,
     0,
     0,
@@ -64,9 +86,9 @@
     0
   ],
   "X": [
-    0.857325256,
-    0.8573247,
-    -4.37334871,
+    0.0,
+    0.0,
+    0.0,
     0.0,
     0.0,
     0.0,
@@ -78,9 +100,9 @@
     0.0
   ],
   "Y": [
-    -1.168517,
-    -1.16851664,
-    1.934734,
+    0.0,
+    0.0,
+    0.0,
     0.0,
     0.0,
     0.0,
@@ -92,17 +114,17 @@
     0.0
   ],
   "IsSelected": [
-    true,
+    false,
     false,
     false,
     false
   ],
   "IsBought": [
-    true,
+    false,
     false,
     false,
     false
   ],
-  "IsTutorialCompleted": true,
+  "IsTutorialCompleted": false,
   "CurrentStepIndex": 0
 }
